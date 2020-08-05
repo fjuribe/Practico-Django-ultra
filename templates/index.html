@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h3>Hola mundo</h3>
+
+	<table>
+		<caption>tabla de personas</caption>
+		<thead>
+			<tr>
+				<th>nombre</th>
+				<th>apellido</th>
+				<th>correo</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for persona in personas %}
+			<tr>
+				<td>{{ persona.nombre }}</td>
+				<td>{{ persona.apellido }}</td>
+				<td>{{ persona.correo }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
