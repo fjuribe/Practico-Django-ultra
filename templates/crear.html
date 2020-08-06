@@ -1,1 +1,14 @@
 {% extends 'index.html' %}
+{% block titulo %} Este es el formulario de contacto{% endblock titulo %}
+{% block cuerpo %}
+
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit">Crear</button>
+</form>
+
+
+
+
+ {% endblock cuerpo%}
