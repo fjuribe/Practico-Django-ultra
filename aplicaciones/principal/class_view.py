@@ -1,23 +1,39 @@
 from django.shortcuts import render,redirect
 from django.views.generic import CreateView,DeleteView,ListView,UpdateView #view
+from django.urls import reverse_lazy
 from .form import PersonaForm
 from .models import Persona
-
-
 
 
 class PersonaList(ListView):
 	model=Persona
 	template_name='index.html'
-
-	def get_queryset(self):
-		return self.model.objects.all()[:2]
-
+	# def get_queryset(self):
+	# 	return self.model.objects.all()[:2]
 
 
+class PersonaCreate(CreateView):
+	"""docstring for PersonaCreate"""
+	model=Persona
+	form_class=PersonaForm
+	template_name='crear.html'
+	success_url=reverse_lazy('index')
+	
 
 
+class PersonaEditar(UpdateView):
+	model=Persona
+	form_class=PersonaForm
+	template_name='crear.html'
+	success_url=reverse_lazy('index')
 
+
+class PersonaDelete(DeleteView):
+	model=Persona
+	template_name="verificacion.html"
+	success_url=reverse_lazy('index')
+
+		
 
 
 

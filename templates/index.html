@@ -9,7 +9,7 @@
 <body>
 	{% block cuerpo %}
 	<h3> Hola mundo </h3>
-	<button href="{% url 'crear' %}">nuevo</button>
+	<a href="{% url 'crear' %}">nuevo</a>
      
 	<table border="1">
 		<caption>tabla de personas</caption>
@@ -22,7 +22,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{% for persona in personas %}
+			{% for persona in object_list %}
 			<tr>
 				<td>{{ persona.nombre }}</td>
 				<td>{{ persona.apellido }}</td>
